@@ -11,10 +11,10 @@ all_files.each do |file|
   if parts.length != 2 
     puts "skipping #{filepath}"
   else
-    artist = parts[0]
-    album_year = parts[1]
+    artist = parts[0].strip
+    album_year = parts[1].strip
     year_arr = parts[1].split("(")
-    album = year_arr[0]
+    album = year_arr[0].split
     yearch = year_arr[1]
     year = yearch.chomp(")")
     mkdir_p("./#{artist}/#{year} - #{album}")
